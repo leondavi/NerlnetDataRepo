@@ -46,8 +46,8 @@ cv2.waitKey(0) # Press a key to close window
 
 downscaledDf.iloc[:,-1] = df.iloc[:,-1] # Add the labels from the original df
 
-downscaledDf.to_csv('mnistDownscaled-labels.csv', header=False, index=False)
-downscaledDf.iloc[:,:-1].to_csv('mnistDownscaled-no labels.csv', header=False, index=False)
+downscaledDf.to_csv('mnistDownscaled/mnistDownscaled-labels.csv', header=False, index=False)
+downscaledDf.iloc[:,:-1].to_csv('mnistDownscaled/mnistDownscaled-no labels.csv', header=False, index=False)
 
 
 
