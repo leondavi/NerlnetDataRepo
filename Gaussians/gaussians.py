@@ -32,6 +32,18 @@ for i in range(4):
             continue
 
 while True:
+    print("\nPlease select the number of rows (samples):", end=' ')
+    samples = input()
+
+    try:
+        smaples = int(samples)
+        break
+
+    except ValueError:
+        print("\nIllegal Input") 
+        continue
+
+while True:
     print("\nPlease select the number of features:", end=' ')
     features = input()
 
@@ -51,8 +63,8 @@ os.mkdir(path)
 
 
 for i in range(4):
-    data = np.random.normal(mu[0,i], sigma[0,i], (100000,features))
-    labels = np.full((100000,1), mu[0,i])
+    data = np.random.normal(mu[0,i], sigma[0,i], (samples,features))
+    labels = np.full((samples,1), mu[0,i])
     dataWithLabels = np.hstack((data, labels))
 
     df = pd.DataFrame(data = data)
