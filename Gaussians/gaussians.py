@@ -71,8 +71,8 @@ for i in range(4):
     df = pd.DataFrame(data = data[0,i,:,:])
     dfWithLabels = pd.DataFrame(data = labeledData[0,i,:,:])
 
-    df.to_csv(f'Gaussians CSVs/gaussian{i+1}_train.csv', header=False, index=False)
-    dfWithLabels.to_csv(f'Gaussians CSVs/gaussian{i+1}_predict.csv', header=False, index=False)
+    df.to_csv(f'Gaussians CSVs/gaussian{i+1}_predict.csv', header=False, index=False)
+    dfWithLabels.to_csv(f'Gaussians CSVs/gaussian{i+1}_train.csv', header=False, index=False)
 
 for i in range(0,3,2):
     gauss1 = pd.DataFrame(data = data[0,i,:,:])
@@ -85,8 +85,8 @@ for i in range(0,3,2):
     labledMixData = pd.concat([labledGauss1, labledGauss2])
     labledMixData = labledMixData.sample(frac=1).reset_index(drop=True)
 
-    mixData.to_csv(f'Gaussians CSVs/mix{i+1}and{i+2}_train.csv', header=False, index=False)
-    labledMixData.to_csv(f'Gaussians CSVs/mix{i+1}and{i+2}_predict.csv', header=False, index=False)
+    mixData.to_csv(f'Gaussians CSVs/mix{i+1}and{i+2}_predict.csv', header=False, index=False)
+    labledMixData.to_csv(f'Gaussians CSVs/mix{i+1}and{i+2}_train.csv', header=False, index=False)
 
 allGaussMix = pd.concat([pd.DataFrame(data = data[0,0,:,:]),\
     pd.DataFrame(data = data[0,1,:,:]),\
@@ -102,8 +102,8 @@ labeldAllGaussMix = pd.concat([pd.DataFrame(data = labeledData[0,0,:,:]),\
 
 labeldAllGaussMix = labeldAllGaussMix.sample(frac=1).reset_index(drop=True)   
 
-allGaussMix.to_csv(f'Gaussians CSVs/mixAllGaussians_train.csv', header=False, index=False)
-labeldAllGaussMix.to_csv(f'Gaussians CSVs/mixAllGaussian_predict.csv', header=False, index=False)
+allGaussMix.to_csv(f'Gaussians CSVs/mixAllGaussian_predict.csv', header=False, index=False)
+labeldAllGaussMix.to_csv(f'Gaussians CSVs/mixAllGaussian_train.csv', header=False, index=False)
 
 
 
