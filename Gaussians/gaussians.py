@@ -55,12 +55,10 @@ while True:
         print("\nIllegal Input") 
         continue
 
-
 path = "Gaussians CSVs"
 if os.path.exists(path):
     shutil.rmtree(path)
 os.mkdir(path)
-
 
 for i in range(4):
     data = np.random.normal(mu[0,i], sigma[0,i], (samples,features))
@@ -70,8 +68,8 @@ for i in range(4):
     df = pd.DataFrame(data = data)
     dfWithLabels = pd.DataFrame(data = dataWithLabels)
 
-    df.to_csv(f'Gaussians CSVs/Gaussian{i+1}.csv', header=False, index=False)
-    dfWithLabels.to_csv(f'Gaussians CSVs/Gaussian{i+1} + Labels.csv', header=False, index=False)
+    df.to_csv(f'Gaussians CSVs/gaussian{i+1}.csv', header=False, index=False)
+    dfWithLabels.to_csv(f'Gaussians CSVs/gaussian{i+1} + Labels.csv', header=False, index=False)
 
 
 
